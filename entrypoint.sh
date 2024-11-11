@@ -38,7 +38,7 @@ exclusions=${INPUT_PATTERNS}
 if [ -n "$exclusions" ]; then
     echo "Exclusions provided. Writing to .sprocket.yml."
     echo -n "" > .sprocket.yml
-    for exclusion in $(echo $exclusions | sed 's/,/ /')
+    for exclusion in $(echo $exclusions | sed 's/,/ /g')
     do
         echo "$exclusion" >> .sprocket.yml
     done
